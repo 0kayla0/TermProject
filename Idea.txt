@@ -1,0 +1,25 @@
+Term project Idea:
+
+Create a Smart contract that manages employees at work.  The scope of this is to address inconsitencies within the store and make the actions of the employees
+visible to the manager.  Often stores suffer from employees not doing there job correctly, i.e. incorrect register count, overuse of employee discounts
+
+Smart contract that is responsible for PoS improvments:
+	
+	Time approvals - Clock in/out
+	Paying the staff at the timely intervals
+	Managing employee discounts
+
+	*Manages inventory on a consistent basis based upon transactions 2
+	*Allows the customer to pay with Crypto for their purchases 1
+	Also allows the customer to pay with Cash, credit cards, and Ram Cash
+	Prevents employees stealing/incorrect change to the customer	
+	
+	Transactions could be mined by Proof of Stake of the employee managing the register
+		* If the employee performs invalid transactions ---------------------------
+
+	Prevents only approved employees to work at a time based upon the schedule created by an approved manager
+	Ensures responsibility for workers, if they swap shifts, these are approved by the manager.
+	
+
+	Blockchain on supplyChain, PoS system
+

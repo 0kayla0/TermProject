@@ -1,0 +1,31 @@
+Point of Sale
+
+	Maintains three databases that contain:
+	*Product information
+	*Records of the purchases
+	*Inventory
+
+Using blockchain technology with PoS:
+	
+	Transaction details are save to the blockchain
+		*This will have all the records publicly available, helping out with tax audits
+		*The smart contract could perform appropriate budgeting for the store allowing automation for getting the register reports at the end of the day
+
+Revised Idea:
+
+The benefits of using blockchain are easily shown in this system, the main issue is that the crypto currency is volatile and doesn't always hold its value.
+Ramcash holds a dollar value and is backed up by the university since students can pay money to get ramcash.  Lets make Ramcash a cryptocurrency that is used at all of the stores on campus.
+One RamCoin could be worth $1.
+
+Since the university operates with "RamCoin" we can re-create the PoS system to do the following:
+	*Allow students to make purchases around campus
+	*The Registers can maintain the inventory for the stores
+	*keep the records of the students purchases
+	*allow the university to see where the students money is being spent
+	
+
+The benifit of using RamCoin exclusively is that the university will always have the money 
+
+
+https://medium.com/tillbilly/worlds-1st-blockchain-powered-integrated-point-of-sale-terminal-is-a-bold-claim-afa8a97f098d
+https://www.leewayhertz.com/how-blockchain-improve-point-of-sale-process/

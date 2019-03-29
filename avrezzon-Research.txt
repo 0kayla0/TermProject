@@ -24,7 +24,19 @@ Since the university operates with "RamCoin" we can re-create the PoS system to 
 	*allow the university to see where the students money is being spent
 	
 
-The benifit of using RamCoin exclusively is that the university will always have the money 
+Hopefully this will make more sense.
+
+Each of the vendors will be a registered address with the RamCoin System.
+	*The vendors will have to have a wallet associated with the store so that the vendor could perform transactions, pay the gas
+The vendor registers with the contract and creates an instance of the register along with some of the products that they sell.
+	*This could be another smart contract deployed within the contract for RamCoin
+	*If the vendor only accepts RamCoin then the application of this will always allow the state of the register to be at the correct balance
+		**This is the crucial part of this system
+The student makes a purchase with their account giving the vendor their RamCoin based upon their address with the system
+	*The register will create the transaction and record the type of sale done
+		** This will document what was purchased, the sales amount
+		** These things could be batched and at the end of the day the register would then modify the current state of the inventory
+		** While these would still be purchased in RamCoin the register report could still translate this to a dollar value that the university has
 
 
 https://medium.com/tillbilly/worlds-1st-blockchain-powered-integrated-point-of-sale-terminal-is-a-bold-claim-afa8a97f098d

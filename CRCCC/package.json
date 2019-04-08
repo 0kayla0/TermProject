@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
   "dependencies": {
     "ganache-cli": "^6.4.2",
     "mocha": "^6.1.1",
+    "request": "^2.88.0",
     "solc": "^0.4.25",
     "truffle-hdwallet-provider": "0.0.3",
     "web3": "^1.0.0-beta.35"

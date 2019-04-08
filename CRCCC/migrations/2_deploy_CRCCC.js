@@ -1,6 +1,6 @@
-var CRCCC = artifacts.require("CRCCC");
+const CRCCC = artifacts.require("./CRCCC.sol");
 
-modules.exports = function(deployer){
+module.exports = function(deployer){
     const _name = "CryptoRamCashCoinChain";
     const _symbol = "CRCCC";
     const _decimals = 2;

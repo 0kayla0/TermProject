@@ -1,34 +1,12 @@
-// const CRCCC = artifacts.require("./CRCCC.sol");
-const ganache = require("ganache-cli");
-const Web3 = require("web3");
-const assert = require("assert");
-const provider = ganache.provider();
-const web3 = new Web3(provider);
+//TODO tomorrow I will work more on this, setting up the mocha harness has been pretty weird
 
-const compiledCRCCC_Contract = require("../build/contracts/CRCCC");
+var Token = artifacts.require("CRCCC");
 
-let accounts;
-let crccc_contract;
+contract("CryptoRamCashCoinChain Unit Tests", () =>{
 
-const _name = "CryptoRamCashCoinChain";
-const _symbol = "CRCCC";
-const _decimals = 2;
+    beforeEach(() => {
+        this.token = Token.deployed(_name, _symbol, _decimals).then((instance) => {
 
-beforeEach(async () => {
-
-    this.token = await CRCCC.new(_name, _symbol, _decimals);
-
-    // accounts = await  web3.eth.Contract(
-    //     JSON.parse(compiledCRCCC_Contract)
-    // )
-    //    .deploy({data : compiledCRCCC_Contract.bytecode})
-    //    .send({from : accounts[0], gas: "2000000"});
-
-});
-
-describe("CryptoRamCashCoinChain", () =>{
-   it("should have the correct", async () => {
-       const name = await this.token.name();
-       assert.equal(_name, name);
-   });
+        });
+    });
 });

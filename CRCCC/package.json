@@ -15,7 +15,7 @@
     "chai": "^3.5.0",
     "chai-bignumber" : "^2.0.2",
     "mocha": "^6.1.1",
-    "openzeppelin-solidity": "^2.2.0"
+    "openzeppelin-solidity": "2.0.1"
   },
   "dependencies": {
     "ganache-cli": "^6.4.2",

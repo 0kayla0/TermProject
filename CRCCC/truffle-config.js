@@ -18,12 +18,8 @@
  *
  */
 
-// const HDWalletProvider = require('truffle-hdwallet-provider');
-// const infuraKey = "fj4jll3k.....";
-//
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
-
+ //const HDWalletProvider = require('truffle-hdwallet-provider');
+ //For your local projects to deploy to rinkeby you will need to provide the mnuemonic and the infura profile for the contract
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -47,6 +43,16 @@ module.exports = {
      port: 8545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
+      //NOTE: This is the setup for deploying the contracts to the Rinkeby testNet:
+        //truffle migrate --network rinkeby
+    // rinkeby: {
+    //   provider: () => {
+    //       return new HDWalletProvider(mnemonic,infuraKey);
+    //   },
+    //   network_id: 4,
+    //   gas: 4500000,
+    //   gasPrice: 10000000000
+    // }
 
     // Another network with more advanced options...
     // advanced: {

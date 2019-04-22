@@ -4,7 +4,7 @@ require('chai').should();
 
 contract('CRCCC token', accounts => {
 
-    const _name = "CryptoRamCachCoin";
+    const _name = "CryptoRamCashCoin";
     const _symbol = "CRCCC";
     const _decimals = 2;
 

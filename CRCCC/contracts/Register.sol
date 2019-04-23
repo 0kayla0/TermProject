@@ -19,9 +19,9 @@ contract Register {
     //can this be the item.Number and mapped by the item number? easier lookup and records like an array of ints
     uint count = 0;
 
-    constructor(string _vendorName){
-        vendorName = _vendorName;
-    }
+//    constructor(string _vendorName){
+//        vendorName = _vendorName;
+//    }
 
     //adds an item to the inventory
     //future improvment --> only manager
@@ -35,6 +35,7 @@ contract Register {
         name = inventory[_count].Name;
         num = inventory[_count].Number;
         price = inventory[_count].Price;
+    }
 
     constructor() public{
         //Basic inventory

@@ -4,8 +4,6 @@
     <list default="true" id="654e8540-935f-4c8f-b22b-2a056a5a01b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/CRCCC.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/CRCCC.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/Register.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/Register.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/2_deploy_CRCCC.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/2_deploy_CRCCC.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/CRCCC.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/CRCCC.test.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/CRCCC.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+            <state relative-caret-position="-115">
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -31,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/CRCCC.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+            <state relative-caret-position="379">
+              <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -94,7 +92,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="994" />
+    <option name="x" value="69" />
     <option name="y" value="32" />
     <option name="width" value="926" />
     <option name="height" value="1048" />
@@ -182,14 +180,22 @@
       <option name="project" value="LOCAL" />
       <updated>1554793424288</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added the ability to register new students with the crccc contract. Working on adding registers to the contract and how users can interact and make purchases with a vendor.">
+      <created>1555985481003</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555985481003</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31248000" />
+    <option name="totallyTimeSpent" value="34611000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="69" y="32" width="1851" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.23148656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -239,9 +245,11 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Tomorrow I will aim to finalize more parts of the token including the mocha test setup" />
     <MESSAGE value="Basic tests are set up, except for the decimals test. To run the test do an npm install and then truffle test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic tests are set up, except for the decimals test. To run the test do an npm install and then truffle test" />
+    <MESSAGE value="Added the ability to register new students with the crccc contract. Working on adding registers to the contract and how users can interact and make purchases with a vendor." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the ability to register new students with the crccc contract. Working on adding registers to the contract and how users can interact and make purchases with a vendor." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol">
@@ -357,15 +365,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts/CRCCC.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+        <state relative-caret-position="-115">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/CRCCC.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        <state relative-caret-position="379">
+          <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
         </state>
       </provider>
     </entry>

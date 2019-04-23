@@ -21,6 +21,7 @@ contract CRCCC is ERC20, ERC20Detailed{
     }
 
     function registerNewStudent(string name) public{
+        require(studentAccounts[name] == 0x0);
         studentAccounts[name] = msg.sender;
         _mint(msg.sender,300);
     }

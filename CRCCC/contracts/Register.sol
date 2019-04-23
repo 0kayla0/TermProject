@@ -28,13 +28,6 @@ contract Register {
             inventory[number] = Item("Meatball ", number, 1000);
         }
 
-    
-    //gets item by order added to inventory need to know the count
-    function getItemByCount(uint _count)public view returns(string name, uint256 num, uint256 price){
-        name = inventory[_count].Name;
-        num = inventory[_count].Number;
-        price = inventory[_count].Price;
-
 
     //creates itemNumber from name of item
     //converts to all lowercase

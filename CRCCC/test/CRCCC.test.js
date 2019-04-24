@@ -20,7 +20,7 @@ contract('CRCCC token', accounts => {
         crccc = await crccc_token.new();
     });
 
-    describe('token attributes', () => {
+    describe('Token attributes', () => {
 
         it('has the correct name', async() =>{
             const name = await crccc.name();
@@ -69,6 +69,98 @@ contract('CRCCC token', accounts => {
             }catch(err){
                 assert(true);
             }
+        });
+
+    });
+
+    describe('Spawn new registers', () => {
+
+        it("will create new registers", async () => {
+
+            let result = false;
+            try {
+                await crccc.spawnNewRegister("Lake Street Market");
+                result = true;
+            }catch(err){
+                console.log("Could not spawn a new register");
+            }
+            result.should.equal(true);
+
+        });
+
+        it("will not allow two registers to be spawned with the same name", async () => {
+
+            let result = false;
+            try{
+                await crccc.spawnNewRegister("Lake Street Market");
+                await crccc.spawnNewRegister("Lake Street Market");
+            }catch(err){
+                result = true
+            }
+            result.should.equal(true);
+
+        });
+
+    });
+
+    describe("Registered students can perform transactions", () => {
+
+        it('can perform a basic transaction', async () => {
+
+            let result = false;
+
+            await crccc.registerNewStudent("Anthony", {from: accounts[0]});  //intial account balance is 300
+            await crccc.spawnNewRegister("Lake Street Market", {from: accounts[1]});
+
+            try{
+                await crccc.purchaseItem("Lake Street Market", "FIXME", {from: accounts[0]});
+                result = true;
+            }catch(err){
+                result = false;
+            }
+
+            //TODO update this once we implement retrieval of the item's price
+            let account_balance = await crccc.balanceOf(accounts[0]);
+            account_balance.toNumber().should.equal(297);
+            result.should.equal(true);
+
+        });
+
+        //FIXME to not use the outdated function
+        it("transaction fails when the student cannot afford the item", async () => {
+
+            let result = false;
+
+            await crccc.registerNewStudent("Anthony", {from: accounts[0]});  //intial account balance is 300
+            await crccc.spawnNewRegister("Lake Street Market", {from: accounts[1]});
+
+            try{
+                await crccc.purchaseItem("Lake Street Market", 999, {from: accounts[0]});
+                result = false;
+            }catch(err){
+                result = true;
+            }
+
+            result.should.equal(true);
+        });
+
+    });
+
+    describe("Closing the register", () => {
+
+        it('Only managers can close the register', async () => {
+
+            await crccc.registerNewStudent("Anthony", {from: accounts[0]});  //intial account balance is 300
+            await crccc.spawnNewRegister("Lake Street Market", {from: accounts[1]});
+
+            //TODO update
+            await crccc.purchaseItem("Lake Street Market", "yeet", {from: accounts[0]});
+
+            await crccc.closeRegister("Lake Street Market", {from: accounts[1]});
+
+            let manager_balance = await crccc.balanceOf(accounts[1]);
+            manager_balance.toNumber().should.equal(3);
+
         });
 
     });

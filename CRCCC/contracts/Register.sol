@@ -9,23 +9,25 @@ contract Register {
        string Name;
        uint256 Number;
        uint256 Price;
+       uint256 count;
    }
    
     // inventory of items available for sale
     mapping (uint => Item) inventory;  
     uint256[] itemNumArray;
-
+    uint256 totalSales;
+    uint256[] soldInventory;
 
       constructor(string _vendorName)public {
             vendorName = _vendorName;
             //Basic inventory
             uint number;
             itemNumArray.push(number = createItemNumber("Cupcake"));
-            inventory[number] = Item("Cupcake ", number, 150);
+            inventory[number] = Item("Cupcake ", number, 150, 10);
             itemNumArray.push(number = createItemNumber("Orange"));
-            inventory[number] = Item("Orange ", number, 50);
+            inventory[number] = Item("Orange ", number, 50, 10);
             itemNumArray.push(number = createItemNumber("Meatball"));
-            inventory[number] = Item("Meatball ", number, 1000);
+            inventory[number] = Item("Meatball ", number, 1000, 10);
         }
 
 
@@ -70,5 +72,29 @@ contract Register {
             num = inventory[number].Number;
             price = inventory[number].Price;
        }
+
+      //given a name returns a price
+      function getPrice(string name)public view returns(uint256 price){
+        uint256 num = createItemNumber(name);
+        price = inventory[num].Price;
+      }
+
+      //with purchase update count, add price to total sales, keep track of inventory sold
+      function purchase(string name)public view returns(bool success){
+        uint256 num = createItemNumber(name);
+        if(inventory[num].count > 0){
+            inventory[num].count = inventory[num].count -1;
+            totalSales = totalSales + inventory[num].Price;
+            soldInventory.push(num);
+            success = true;
+        }else{
+            success = false;
+        }
+      }
+
+      //close register
+
+
+      //customer item lookup
 
 }

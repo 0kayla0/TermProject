@@ -54,12 +54,10 @@ contract CRCCC is ERC20, ERC20Detailed{
     function purchaseItem(string vendorID, string itemName) public returns(bool){
 
         //Select the register that the student is looking to make a purchase at
-        //Register register = RegisterAccounts[vendorID];
+        Register register = RegisterAccounts[vendorID];
 
         //Obtain the price of the item that the student wants to purchase
-        //TODO capture the return of the item
-        //NOTE THIS IS A TEMP FIX
-        uint256 price = 3; //3 CRCCC tokens required to purchase
+        uint256 price = register.getPrice(itemName);
 
         //assert that the user has the amount of CRCCC that the vendor calls for for that item
         require(balanceOf(msg.sender) >= price);
@@ -70,12 +68,22 @@ contract CRCCC is ERC20, ERC20Detailed{
         //determine the success of the transfer => this could fail if the student does not have enough money
         if(result == true){
 
+            bool  regTransaction = register.purchase(itemName);
+
+            //This is in the event where the vendor does not have enough of the item to instock
+            //to sell to the customer
+            if( regTransaction == false){
+
+                //TODO revert the transfer of the transaction. Refund the customer the amount of tokens moved
+
+                return false;
+            }
         }
         //based upon success update the register and its inventory
         return result;
     }
 
-    //FIXME this is just for debugging purposes.  This will be removed later
+    //TODO Remove this function and alter the mocha tests that use this function
     function purchaseItem(string vendorID, uint256 price) public returns(bool){
         require(balanceOf(msg.sender) >= price);
         return transfer(RegisterAddress[vendorID], price);
@@ -89,19 +97,19 @@ contract CRCCC is ERC20, ERC20Detailed{
         //This function can only be performed by the manager of the register
         require(RegisterOwner[vendorID] == msg.sender);
 
+        //FIXME replace this with the cash out function of the Register Contract
         uint256 reg_balance = balanceOf(RegisterAddress[vendorID]);
         _transfer(RegisterAddress[vendorID], msg.sender, reg_balance);
 
-        //TODO populate the register report in the mapping
-
     }
 
-    //TODO to be implemented
     function viewRegisterReport(string vendorID) public view {
-
+        //FIXME Revise to ensure functionality
+        Register register = RegisterAccounts[vendorID];
+        register.getInventory();
     }
 
-    //These functions below are not essential for functionality, primarily used for tests
+    //Debugging functions used in mocha tests
 
     function viewRegisterAddress(string vendorID) public view returns(address){
         return RegisterAddress[vendorID];

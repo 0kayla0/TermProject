@@ -42,10 +42,10 @@ contract CRCCC is ERC20, ERC20Detailed{
         //Ensure that the register doesnt already exist
         require(RegisterAddress[vendorID] == 0x0);
 
-        address new_reg = address(new Register(vendorID));
+        Register new_reg = new Register(vendorID);
 
-        //RegisterAccounts[vendorID] = new_reg;
-        RegisterAddress[vendorID] = new_reg;
+        RegisterAccounts[vendorID] = new_reg;
+        RegisterAddress[vendorID] = address(new_reg);
         RegisterOwner[vendorID] = msg.sender;
 
     }
@@ -85,12 +85,6 @@ contract CRCCC is ERC20, ERC20Detailed{
         }
         //based upon success update the register and its inventory
         return result;
-    }
-
-    //TODO Remove this function and alter the mocha tests that use this function
-    function purchaseItem(string vendorID, uint256 price) public returns(bool){
-        require(balanceOf(msg.sender) >= price);
-        return transfer(RegisterAddress[vendorID], price);
     }
 
     //This function is responsible for:

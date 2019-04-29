@@ -50,6 +50,11 @@ contract CRCCC is ERC20, ERC20Detailed{
 
     }
 
+    //This will display to the user what the price is for a given item at a store
+    function viewPrice(string vendorId, string itemName) public view returns(uint256 price){
+        return RegisterAccounts[vendorId].getPrice(itemName);
+    }
+
     //Assumption is that only one item can be purchased at a time
     function purchaseItem(string vendorID, string itemName) public returns(bool){
 
@@ -74,8 +79,7 @@ contract CRCCC is ERC20, ERC20Detailed{
             //to sell to the customer
             if( regTransaction == false){
 
-                //TODO revert the transfer of the transaction. Refund the customer the amount of tokens moved
-
+                transferFrom(RegisterAddress[vendorID],msg.sender,price);
                 return false;
             }
         }

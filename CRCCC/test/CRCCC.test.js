@@ -111,17 +111,20 @@ contract('CRCCC token', accounts => {
 
             await crccc.registerNewStudent("Anthony", {from: accounts[0]});  //intial account balance is 300
             await crccc.spawnNewRegister("Lake Street Market", {from: accounts[1]});
+            console.log("Ka")
+            let price = await crccc.viewPrice("Lake Street Market", "Cupcake", {from: accounts[0]});
+            console.log("The price of the item is: " + price)
+            await crccc.purchaseItem("Lake Street Market", "Cupcake", {from: accounts[0]});
+            console.log("Boom")
+            // try{
+            //
+            //     result = true;
+            // }catch(err){
+            //     result = false;
+            // }
 
-            try{
-                await crccc.purchaseItem("Lake Street Market", "FIXME", {from: accounts[0]});
-                result = true;
-            }catch(err){
-                result = false;
-            }
-
-            //TODO update this once we implement retrieval of the item's price
             let account_balance = await crccc.balanceOf(accounts[0]);
-            account_balance.toNumber().should.equal(297);
+            account_balance.toNumber().should.equal(300-price.toNumber());
             result.should.equal(true);
 
         });
@@ -135,7 +138,7 @@ contract('CRCCC token', accounts => {
             await crccc.spawnNewRegister("Lake Street Market", {from: accounts[1]});
 
             try{
-                await crccc.purchaseItem("Lake Street Market", 999, {from: accounts[0]});
+                await crccc.purchaseItem("Lake Street Market", "Meatball", {from: accounts[0]});
                 result = false;
             }catch(err){
                 result = true;

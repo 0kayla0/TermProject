@@ -3,7 +3,6 @@ pragma solidity ^0.4.25;
 
 contract Register{
 
-   address public manager;
    string public vendorName;
 
    struct Item{
@@ -31,7 +30,6 @@ contract Register{
         inventory[number] = Item("Meatball ", number, 1000, 10);
     }
 
-
     //creates itemNumber from name of item
     //converts to all lowercase
     //https://ethereum.stackexchange.com/questions/10932/how-to-convert-string-to-int
@@ -48,7 +46,6 @@ contract Register{
         }
         return number;
     }
-
 
     //adds an item to the inventory
     function addItem(string name, uint256 price, uint256 count) public{
@@ -123,6 +120,7 @@ contract Register{
         return inventoryList;
     }
 
+    //FIXME when I made two purchases this is what the output looked like ", Cupcake , 732, 150, 8, Cupcake , 732, 150, 8"
     //cashout return totalsales inventory sold name, num, price, count all items
     function cashOut() public view returns(uint256 totalSales, string soldInventoryItems){
         totalSales = _totalSales;
@@ -159,7 +157,6 @@ contract Register{
         }
         str = string(s);
     }
-
 
     //https://ethereum.stackexchange.com/questions/729/how-to-concatenate-strings-in-solidity
     function append(string a, string b, string c)private pure returns (string){

@@ -126,7 +126,6 @@ contract('CRCCC token', accounts => {
 
         });
 
-        //FIXME to not use the outdated function
         it("transaction fails when the student cannot afford the item", async () => {
 
             let result = false;
@@ -153,13 +152,16 @@ contract('CRCCC token', accounts => {
             await crccc.registerNewStudent("Anthony", {from: accounts[0]});  //intial account balance is 300
             await crccc.spawnNewRegister("Lake Street Market", {from: accounts[1]});
 
-            //TODO update
+            await crccc.purchaseItem("Lake Street Market", "Cupcake", {from: accounts[0]});
             await crccc.purchaseItem("Lake Street Market", "Cupcake", {from: accounts[0]});
 
             await crccc.closeRegister("Lake Street Market", {from: accounts[1]});
 
+            let report = await crccc.viewRegisterReport("Lake Street Market");
+            console.log(report);
+
             let manager_balance = await crccc.balanceOf(accounts[1]);
-            manager_balance.toNumber().should.equal(150);
+            manager_balance.toNumber().should.equal(300);
 
         });
 

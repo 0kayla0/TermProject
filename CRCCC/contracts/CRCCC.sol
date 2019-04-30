@@ -95,16 +95,18 @@ contract CRCCC is ERC20, ERC20Detailed{
         //This function can only be performed by the manager of the register
         require(RegisterOwner[vendorID] == msg.sender);
 
-        //FIXME replace this with the cash out function of the Register Contract
-        uint256 reg_balance = balanceOf(RegisterAddress[vendorID]);
+        uint256 reg_balance;
+        string memory reg_report;
+
+        (reg_balance, reg_report) = RegisterAccounts[vendorID].cashOut();
+
         _transfer(RegisterAddress[vendorID], msg.sender, reg_balance);
+        RegisterReports[vendorID] = reg_report;
 
     }
 
-    function viewRegisterReport(string vendorID) public view {
-        //FIXME Revise to ensure functionality
-        Register register = RegisterAccounts[vendorID];
-        register.getInventory();
+    function viewRegisterReport(string vendorID) public view returns(string) {
+        return RegisterReports[vendorID];
     }
 
     //Debugging functions used in mocha tests

@@ -23,11 +23,11 @@ contract Register{
         //Basic inventory
         uint number;
         itemNumArray.push(number = createItemNumber("Cupcake"));
-        inventory[number] = Item("Cupcake ", number, 150, 10);
+        inventory[number] = Item("Cupcake", number, 150, 10);
         itemNumArray.push(number = createItemNumber("Orange"));
-        inventory[number] = Item("Orange ", number, 50, 10);
+        inventory[number] = Item("Orange", number, 50, 10);
         itemNumArray.push(number = createItemNumber("Meatball"));
-        inventory[number] = Item("Meatball ", number, 1000, 10);
+        inventory[number] = Item("Meatball", number, 1000, 10);
     }
 
     //creates itemNumber from name of item
@@ -80,6 +80,9 @@ contract Register{
     //with purchase update count, add price to total sales, keep track of inventory sold
     function purchase(string name)public returns(bool success){
         uint256 num = createItemNumber(name);
+
+        require(inventory[num].Count > 0);
+
         if(inventory[num].Count > 0){
             inventory[num].Count = inventory[num].Count -1;
             _totalSales = _totalSales + inventory[num].Price;

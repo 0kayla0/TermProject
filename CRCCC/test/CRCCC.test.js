@@ -158,7 +158,7 @@ contract('CRCCC token', accounts => {
             await crccc.closeRegister("Lake Street Market", {from: accounts[1]});
 
             let report = await crccc.viewRegisterReport("Lake Street Market");
-            console.log(report);
+            //console.log(report);
 
             let manager_balance = await crccc.balanceOf(accounts[1]);
             manager_balance.toNumber().should.equal(300);

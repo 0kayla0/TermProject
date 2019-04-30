@@ -42,24 +42,27 @@ contract CRCCC is ERC20, ERC20Detailed{
         //Ensure that the register doesnt already exist
         require(RegisterAddress[vendorID] == 0x0);
 
-        address new_reg = address(new Register(vendorID));
+        Register new_reg = new Register(vendorID);
 
-        //RegisterAccounts[vendorID] = new_reg;
-        RegisterAddress[vendorID] = new_reg;
+        RegisterAccounts[vendorID] = new_reg;
+        RegisterAddress[vendorID] = address(new_reg);
         RegisterOwner[vendorID] = msg.sender;
 
+    }
+
+    //This will display to the user what the price is for a given item at a store
+    function viewPrice(string vendorId, string itemName) public view returns(uint256 price){
+        return RegisterAccounts[vendorId].getPrice(itemName);
     }
 
     //Assumption is that only one item can be purchased at a time
     function purchaseItem(string vendorID, string itemName) public returns(bool){
 
         //Select the register that the student is looking to make a purchase at
-        //Register register = RegisterAccounts[vendorID];
+        Register register = RegisterAccounts[vendorID];
 
         //Obtain the price of the item that the student wants to purchase
-        //TODO capture the return of the item
-        //NOTE THIS IS A TEMP FIX
-        uint256 price = 3; //3 CRCCC tokens required to purchase
+        uint256 price = register.getPrice(itemName);
 
         //assert that the user has the amount of CRCCC that the vendor calls for for that item
         require(balanceOf(msg.sender) >= price);
@@ -70,15 +73,18 @@ contract CRCCC is ERC20, ERC20Detailed{
         //determine the success of the transfer => this could fail if the student does not have enough money
         if(result == true){
 
+            bool  regTransaction = register.purchase(itemName);
+
+            //This is in the event where the vendor does not have enough of the item to instock
+            //to sell to the customer
+            if( regTransaction == false){
+
+                transferFrom(RegisterAddress[vendorID],msg.sender,price);
+                return false;
+            }
         }
         //based upon success update the register and its inventory
         return result;
-    }
-
-    //FIXME this is just for debugging purposes.  This will be removed later
-    function purchaseItem(string vendorID, uint256 price) public returns(bool){
-        require(balanceOf(msg.sender) >= price);
-        return transfer(RegisterAddress[vendorID], price);
     }
 
     //This function is responsible for:
@@ -89,19 +95,21 @@ contract CRCCC is ERC20, ERC20Detailed{
         //This function can only be performed by the manager of the register
         require(RegisterOwner[vendorID] == msg.sender);
 
-        uint256 reg_balance = balanceOf(RegisterAddress[vendorID]);
+        uint256 reg_balance;
+        string memory reg_report;
+
+        (reg_balance, reg_report) = RegisterAccounts[vendorID].cashOut();
+
         _transfer(RegisterAddress[vendorID], msg.sender, reg_balance);
-
-        //TODO populate the register report in the mapping
-
-    }
-
-    //TODO to be implemented
-    function viewRegisterReport(string vendorID) public view {
+        RegisterReports[vendorID] = reg_report;
 
     }
 
-    //These functions below are not essential for functionality, primarily used for tests
+    function viewRegisterReport(string vendorID) public view returns(string) {
+        return RegisterReports[vendorID];
+    }
+
+    //Debugging functions used in mocha tests
 
     function viewRegisterAddress(string vendorID) public view returns(address){
         return RegisterAddress[vendorID];

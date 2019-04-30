@@ -111,22 +111,21 @@ contract('CRCCC token', accounts => {
 
             await crccc.registerNewStudent("Anthony", {from: accounts[0]});  //intial account balance is 300
             await crccc.spawnNewRegister("Lake Street Market", {from: accounts[1]});
+            let price = await crccc.viewPrice("Lake Street Market", "Cupcake", {from: accounts[0]});
 
             try{
-                await crccc.purchaseItem("Lake Street Market", "FIXME", {from: accounts[0]});
+                await crccc.purchaseItem("Lake Street Market", "Cupcake", {from: accounts[0]});
                 result = true;
             }catch(err){
                 result = false;
             }
 
-            //TODO update this once we implement retrieval of the item's price
             let account_balance = await crccc.balanceOf(accounts[0]);
-            account_balance.toNumber().should.equal(297);
+            account_balance.toNumber().should.equal(300-price.toNumber());
             result.should.equal(true);
 
         });
 
-        //FIXME to not use the outdated function
         it("transaction fails when the student cannot afford the item", async () => {
 
             let result = false;
@@ -135,7 +134,7 @@ contract('CRCCC token', accounts => {
             await crccc.spawnNewRegister("Lake Street Market", {from: accounts[1]});
 
             try{
-                await crccc.purchaseItem("Lake Street Market", 999, {from: accounts[0]});
+                await crccc.purchaseItem("Lake Street Market", "Meatball", {from: accounts[0]});
                 result = false;
             }catch(err){
                 result = true;
@@ -153,13 +152,16 @@ contract('CRCCC token', accounts => {
             await crccc.registerNewStudent("Anthony", {from: accounts[0]});  //intial account balance is 300
             await crccc.spawnNewRegister("Lake Street Market", {from: accounts[1]});
 
-            //TODO update
-            await crccc.purchaseItem("Lake Street Market", "yeet", {from: accounts[0]});
+            await crccc.purchaseItem("Lake Street Market", "Cupcake", {from: accounts[0]});
+            await crccc.purchaseItem("Lake Street Market", "Cupcake", {from: accounts[0]});
 
             await crccc.closeRegister("Lake Street Market", {from: accounts[1]});
 
+            let report = await crccc.viewRegisterReport("Lake Street Market");
+            //console.log(report);
+
             let manager_balance = await crccc.balanceOf(accounts[1]);
-            manager_balance.toNumber().should.equal(3);
+            manager_balance.toNumber().should.equal(300);
 
         });
 

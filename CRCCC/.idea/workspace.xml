@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="654e8540-935f-4c8f-b22b-2a056a5a01b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/CRCCC.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/CRCCC.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CRCCC.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/CRCCC.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,44 +17,33 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contracts/CRCCC.sol">
+        <entry file="file://$PROJECT_DIR$/test/Register.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-115">
-              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+            <state relative-caret-position="-666">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/truffle-config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" column="76" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/CRCCC.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="33" column="34" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="34" />
+            <state relative-caret-position="1089">
+              <caret line="160" column="14" selection-start-line="160" selection-start-column="14" selection-end-line="160" selection-end-column="14" />
               <folding>
-                <element signature="n#!!block;n#totalSupply#0;n#ERC20#0" />
-                <element signature="n#!!block;n#_transfer#0;n#ERC20#0" />
-                <element signature="n#!!block;n#_mint#0;n#ERC20#0" />
-                <element signature="n#!!block;n#_burn#0;n#ERC20#0" />
-                <element signature="n#!!block;n#_burnFrom#0;n#ERC20#0" />
+                <element signature="e#546#1026#0" />
+                <element signature="e#1070#2230#0" />
+                <element signature="e#2276#3041#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contracts/Register.sol">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="78" column="24" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -73,26 +61,34 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>_min</find>
+      <find>_trans</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="0kayla0-transactions" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/migrations/deploy_CRCCC.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/contracts/Register.sol" />
         <option value="$PROJECT_DIR$/migrations/2_deploy_CRCCC.js" />
         <option value="$PROJECT_DIR$/truffle-config.js" />
+        <option value="$PROJECT_DIR$/test/TestRegister.sol" />
         <option value="$PROJECT_DIR$/contracts/CRCCC.sol" />
         <option value="$PROJECT_DIR$/test/CRCCC.test.js" />
+        <option value="$PROJECT_DIR$/contracts/Register.sol" />
+        <option value="$PROJECT_DIR$/test/Register.test.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="69" />
+    <option name="x" value="994" />
     <option name="y" value="32" />
     <option name="width" value="926" />
     <option name="height" value="1048" />
@@ -103,7 +99,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -114,30 +109,23 @@
             <path>
               <item name="CRCCC" type="b2602c69:ProjectViewProjectNode" />
               <item name="CRCCC" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CRCCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CRCCC" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CRCCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CRCCC" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Project2/Project2_Submission/trojanSecret" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RunDashboard">
@@ -165,6 +153,11 @@
       <workItem from="1554675118285" duration="15597000" />
       <workItem from="1554788687677" duration="4686000" />
       <workItem from="1554941418248" duration="879000" />
+      <workItem from="1556510740396" duration="1744000" />
+      <workItem from="1556557389286" duration="146000" />
+      <workItem from="1556577323485" duration="8552000" />
+      <workItem from="1556604456596" duration="1784000" />
+      <workItem from="1556648031135" duration="1104000" />
     </task>
     <task id="LOCAL-00001" summary="Tomorrow I will aim to finalize more parts of the token including the mocha test setup">
       <created>1554696734599</created>
@@ -187,29 +180,71 @@
       <option name="project" value="LOCAL" />
       <updated>1555985481003</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Marking down the functions that will be updated from this update">
+      <created>1556513257642</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556513257642</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Two of the test cases are failing now because I think that the registers aren't being stored correctly. this will be revised in the morning">
+      <created>1556514594546</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1556514594546</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed the token contract with transactions and removed testing function.">
+      <created>1556578955479</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1556578955479</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Merged functions with the Register and the token contract.  Will need to revise the cashOut() sample return =&gt; &quot;, Cupcake , 732, 150, 8, Cupcake , 732, 150, 8&quot;">
+      <created>1556582995976</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1556582995976</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added in mocha tests for the Register contract.">
+      <created>1556585892519</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1556585892519</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Removed not used imports">
+      <created>1556585991795</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1556585991795</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34611000" />
+    <option name="totallyTimeSpent" value="49938000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="69" y="32" width="1851" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.23148656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23148656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32962137" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32962137" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
@@ -219,19 +254,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23148656" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23148656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32962137" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32962137" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
@@ -249,7 +284,13 @@
     <MESSAGE value="Tomorrow I will aim to finalize more parts of the token including the mocha test setup" />
     <MESSAGE value="Basic tests are set up, except for the decimals test. To run the test do an npm install and then truffle test" />
     <MESSAGE value="Added the ability to register new students with the crccc contract. Working on adding registers to the contract and how users can interact and make purchases with a vendor." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the ability to register new students with the crccc contract. Working on adding registers to the contract and how users can interact and make purchases with a vendor." />
+    <MESSAGE value="Marking down the functions that will be updated from this update" />
+    <MESSAGE value="Two of the test cases are failing now because I think that the registers aren't being stored correctly. this will be revised in the morning" />
+    <MESSAGE value="Fixed the token contract with transactions and removed testing function." />
+    <MESSAGE value="Merged functions with the Register and the token contract.  Will need to revise the cashOut() sample return =&gt; &quot;, Cupcake , 732, 150, 8, Cupcake , 732, 150, 8&quot;" />
+    <MESSAGE value="Added in mocha tests for the Register contract." />
+    <MESSAGE value="Removed not used imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed not used imports" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol">
@@ -258,13 +299,6 @@
     <entry file="file://$PROJECT_DIR$/build/contracts/CRCCC.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9612" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/1_initial_migration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="51" selection-start-column="51" selection-end-column="51" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/openzeppelin-solidity/README.md">
@@ -318,20 +352,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Token_Manager.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truffle-config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Token_Manager.sol" />
     <entry file="file://$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
@@ -342,20 +363,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Register.sol">
+    <entry file="file://$PROJECT_DIR$/contracts/Migrations.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/1_initial_migration.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="78" column="24" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="24" />
+        <state>
+          <caret column="51" selection-start-column="51" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/TestRegister.sol" />
+    <entry file="file://$PROJECT_DIR$/contracts/CRCCC.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="108" column="40" lean-forward="true" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!block;n#registerNewStudent#0;n#CRCCC#0" />
+            <element signature="n#!!block;n#spawnNewRegister#0;n#CRCCC#0" />
+            <element signature="n#!!block;n#purchaseItem#0;n#CRCCC#0" />
+            <element signature="n#!!block;n#viewRegisterAddress#0;n#CRCCC#0" />
+            <element signature="n#!!block;n#viewRegisterBalance#0;n#CRCCC#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="34" />
+        <state relative-caret-position="533">
+          <caret line="163" column="3" selection-start-line="163" selection-start-column="3" selection-end-line="163" selection-end-column="3" />
           <folding>
             <element signature="n#!!block;n#totalSupply#0;n#ERC20#0" />
-            <element signature="n#!!block;n#_transfer#0;n#ERC20#0" />
             <element signature="n#!!block;n#_mint#0;n#ERC20#0" />
             <element signature="n#!!block;n#_burn#0;n#ERC20#0" />
             <element signature="n#!!block;n#_burnFrom#0;n#ERC20#0" />
@@ -363,17 +401,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/CRCCC.sol">
+    <entry file="file://$PROJECT_DIR$/contracts/Register.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-115">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        <state relative-caret-position="533">
+          <caret line="80" column="62" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
+          <folding>
+            <element signature="n#!!block;n#createItemNumber#0;n#Register#0" />
+            <element signature="n#!!block;n#addItem#0;n#Register#0" />
+            <element signature="n#!!block;n#getItemByName#0;n#Register#0" />
+            <element signature="n#!!block;n#getItemByNumber#0;n#Register#0" />
+            <element signature="n#!!block;n#getPrice#0;n#Register#0" />
+            <element signature="n#!!block;n#purchase#0;n#Register#0" />
+            <element signature="n#!!block;n#itemLookup#0;n#Register#0" />
+            <element signature="n#!!block;n#getInventory#0;n#Register#0" />
+            <element signature="n#!!block;n#cashOut#0;n#Register#0" />
+            <element signature="n#!!block;n#appendUintToString#0;n#Register#0" />
+            <element signature="n#!!block;n#append#0;n#Register#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/drizzle/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/drizzle/src/DrizzleContract.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/drizzle/dist/drizzle.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/drizzle/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/CRCCC.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+        <state relative-caret-position="1089">
+          <caret line="160" column="14" selection-start-line="160" selection-start-column="14" selection-end-line="160" selection-end-column="14" />
+          <folding>
+            <element signature="e#546#1026#0" />
+            <element signature="e#1070#2230#0" />
+            <element signature="e#2276#3041#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Register.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-666">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truffle-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="76" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="76" />
         </state>
       </provider>
     </entry>

@@ -3,7 +3,6 @@ pragma solidity ^0.4.25;
 
 contract Register{
 
-   address public manager;
    string public vendorName;
 
    struct Item{
@@ -24,13 +23,12 @@ contract Register{
         //Basic inventory
         uint number;
         itemNumArray.push(number = createItemNumber("Cupcake"));
-        inventory[number] = Item("Cupcake ", number, 150, 10);
+        inventory[number] = Item("Cupcake", number, 150, 10);
         itemNumArray.push(number = createItemNumber("Orange"));
-        inventory[number] = Item("Orange ", number, 50, 10);
+        inventory[number] = Item("Orange", number, 50, 10);
         itemNumArray.push(number = createItemNumber("Meatball"));
-        inventory[number] = Item("Meatball ", number, 1000, 10);
+        inventory[number] = Item("Meatball", number, 1000, 10);
     }
-
 
     //creates itemNumber from name of item
     //converts to all lowercase
@@ -48,7 +46,6 @@ contract Register{
         }
         return number;
     }
-
 
     //adds an item to the inventory
     function addItem(string name, uint256 price, uint256 count) public{
@@ -83,6 +80,9 @@ contract Register{
     //with purchase update count, add price to total sales, keep track of inventory sold
     function purchase(string name)public returns(bool success){
         uint256 num = createItemNumber(name);
+
+        require(inventory[num].Count > 0);
+
         if(inventory[num].Count > 0){
             inventory[num].Count = inventory[num].Count -1;
             _totalSales = _totalSales + inventory[num].Price;
@@ -123,6 +123,7 @@ contract Register{
         return inventoryList;
     }
 
+    //FIXME when I made two purchases this is what the output looked like ", Cupcake , 732, 150, 8, Cupcake , 732, 150, 8"
     //cashout return totalsales inventory sold name, num, price, count all items
     function cashOut() public view returns(uint256 totalSales, string soldInventoryItems){
         totalSales = _totalSales;
@@ -159,7 +160,6 @@ contract Register{
         }
         str = string(s);
     }
-
 
     //https://ethereum.stackexchange.com/questions/729/how-to-concatenate-strings-in-solidity
     function append(string a, string b, string c)private pure returns (string){

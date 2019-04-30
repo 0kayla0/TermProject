@@ -13,11 +13,12 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
-    "chai-bignumber" : "^2.0.2",
+    "chai-bignumber": "^2.0.2",
     "mocha": "^6.1.1",
     "openzeppelin-solidity": "2.0.1"
   },
   "dependencies": {
+    "drizzle": "^1.4.0",
     "ganache-cli": "^6.4.2",
     "mocha": "^6.1.1",
     "request": "^2.88.0",

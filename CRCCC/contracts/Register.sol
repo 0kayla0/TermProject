@@ -17,7 +17,6 @@ contract Register{
     mapping( uint => uint) inventorySold;
     uint256[] itemNumArray;
     uint256 _totalSales;
-    uint256[] soldInventory;  //this can go
 
     constructor(string _vendorName)public {
         vendorName = _vendorName;

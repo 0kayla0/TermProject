@@ -1,5 +1,5 @@
 pragma solidity ^0.4.25;
-
+pragma experimental ABIEncoderV2;
 
 contract Register{
 
@@ -14,9 +14,10 @@ contract Register{
 
     // inventory of items available for sale
     mapping (uint => Item) inventory;
+    mapping( uint => uint) inventorySold;
     uint256[] itemNumArray;
     uint256 _totalSales;
-    uint256[] soldInventory;
+    uint256[] soldInventory;  //this can go
 
     constructor(string _vendorName)public {
         vendorName = _vendorName;
@@ -24,10 +25,13 @@ contract Register{
         uint number;
         itemNumArray.push(number = createItemNumber("Cupcake"));
         inventory[number] = Item("Cupcake", number, 150, 10);
+        inventorySold[number] = 0;
         itemNumArray.push(number = createItemNumber("Orange"));
         inventory[number] = Item("Orange", number, 50, 10);
+        inventorySold[number] = 0;
         itemNumArray.push(number = createItemNumber("Meatball"));
         inventory[number] = Item("Meatball", number, 1000, 10);
+        inventorySold[number] = 0;
     }
 
     //creates itemNumber from name of item
@@ -52,6 +56,7 @@ contract Register{
         uint256 number = createItemNumber(name);
         inventory[number] = Item(name, number, price, count);
         itemNumArray.push(number);
+        inventorySold[number] = 0;
     }
 
     //gets item by Name
@@ -78,66 +83,60 @@ contract Register{
     }
 
     //with purchase update count, add price to total sales, keep track of inventory sold
-    function purchase(string name)public returns(bool success){
+    function purchase(string name)public returns(bool) {
         uint256 num = createItemNumber(name);
-
         require(inventory[num].Count > 0);
-
         if(inventory[num].Count > 0){
             inventory[num].Count = inventory[num].Count -1;
             _totalSales = _totalSales + inventory[num].Price;
-            soldInventory.push(num);
-            success = true;
+            inventorySold[num] = inventorySold[num]+1;
+            return true;
         }else{
-            success = false;
+            return false;
         }
     }
 
-
     //customer item lookup return name count price all items
-    function itemLookup() public view returns(string ){
+    function itemLookup() public view returns(string){
        //loop through items to add to string
-        string memory inventoryList;
+        string memory temp;
         for(uint i = 0; i < itemNumArray.length; i++){
-            string memory temp;
             temp = append(temp, ", ", inventory[itemNumArray[i]].Name);
             temp = append(temp, ", ", appendUintToString(inventory[itemNumArray[i]].Price));
             temp = append(temp, ", ", appendUintToString(inventory[itemNumArray[i]].Count));
-            inventoryList = append(temp, "\n ", "\n");
         }
-        return inventoryList;
+        return temp;
     }
 
     //get inventory return name number price count all items
     function getInventory() public view returns(string){
         //loop through items add to string
-        string memory inventoryList;
+        string memory temp;
         for(uint i = 0; i < itemNumArray.length; i++){
-            string memory temp;
             temp = append(temp, ", ", inventory[itemNumArray[i]].Name);
             temp = append(temp, ", ", appendUintToString(inventory[itemNumArray[i]].Number));
             temp = append(temp, ", ", appendUintToString(inventory[itemNumArray[i]].Price));
             temp = append(temp, ", ", appendUintToString(inventory[itemNumArray[i]].Count));
-            inventoryList = append(temp, "\n ", "\n");
         }
-        return inventoryList;
+        return temp;
     }
 
-    //FIXME when I made two purchases this is what the output looked like ", Cupcake , 732, 150, 8, Cupcake , 732, 150, 8"
-    //cashout return totalsales inventory sold name, num, price, count all items
+
+    //cashout return totalsales, and inventory name, count all items
+    //if item has had no sales "name, (blank)"
     function cashOut() public view returns(uint256 totalSales, string soldInventoryItems){
         totalSales = _totalSales;
-        //loop through soldInventory
-        string memory inventoryList;
-        for(uint i = 0; i < soldInventory.length; i++){
-            string memory temp;
-            temp = append(temp, ", ", inventory[soldInventory[i]].Name);
-            temp = append(temp, ", ", appendUintToString(inventory[soldInventory[i]].Number));
-            temp = append(temp, ", ", appendUintToString(inventory[soldInventory[i]].Price));
-            temp = append(temp, ", ", appendUintToString(inventory[soldInventory[i]].Count));
-            inventoryList = append(temp, "\n", "\n");
+        string memory temp;
+        for(uint i = 0; i < itemNumArray.length; i++){
+            temp = append(temp, ", ", inventory[itemNumArray[i]].Name);
+            temp = append(temp, ", ", appendUintToString(inventorySold[itemNumArray[i]]));
         }
-        soldInventoryItems = inventoryList;
+        soldInventoryItems = temp;
+    }
+
+    //given the name of an item returns the number sold
+    function numberSold(string Name) public view returns(uint256 totalSold){
+        totalSold = inventorySold[createItemNumber(Name)];
     }
 
     //helper
@@ -154,7 +153,6 @@ contract Register{
         }
         bytes memory s = new bytes(i);
         uint h;
-        //add name to byte string
         for(h = 0; h < i; h++) {
             s[h] = reversed[i-1-h];
         }
@@ -164,5 +162,13 @@ contract Register{
     //https://ethereum.stackexchange.com/questions/729/how-to-concatenate-strings-in-solidity
     function append(string a, string b, string c)private pure returns (string){
         return string(abi.encodePacked(a, b, c));
+    }
+
+    //gets item by Number
+    //second way returns tuple(name, num, price, count)
+    //uses pragma experimental ABIEncoderV2;
+    //can change to get item by name if easier to use
+    function getItemStruct(uint256 itemNumber)public view returns(Register.Item){
+        return inventory[itemNumber];
     }
 }

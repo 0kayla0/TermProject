@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Media } from 'reactstrap';
 
 import "./App.css";
+import ramLogo from "./Resources/CSU-Ram.png";
 
 import CurrentVendor from "./Components/CurrentVendor";
 import CloseRegister from "./Components/CloseRegister";
@@ -87,17 +88,37 @@ export default class App extends Component {
             welcome = "Hello " + this.state.acct_name + ", time to spend some mad crypto."
         }
 
+
+        /*
+        * <div id={"logo"}>
+
+                                </div>
+                                <div id={"header"}>
+
+                                    <h3 align="center">Use this site to pay for your goods from any CSU sponsored vendors</h3>
+                                    <br/>
+
+                                </div>**/
+
         return (
             <div id={"application"}>
                 <Container>
                     <Row>
                         <Col>
-                            <h1 align="center">Colorado State University's CRCCC Transaction Webpage</h1>
-                            <h2 align="center">Crypto Ram Cash Coin Chain</h2>
-                            <h3 align="center">Use this site to pay for your goods from any CSU sponsored vendors</h3>
-                            <br/>
-                            <h3 align="center">{welcome}</h3>
-                            <h3 align="center">{regName}</h3>
+                            <Media>
+                                <Media left href="#">
+                                    <Media object src={ramLogo} alt="PNG of CSU logo" />
+                                </Media>
+                                <Media body>
+                                    <Media heading>
+                                        <h2 align="center">Colorado State University's CRCCC Transaction Webpage</h2>
+                                        <h3 align="center">Crypto Ram Cash Coin Chain</h3>
+                                        <h4 align="center">Use this site to pay for your goods from any CSU sponsored vendors</h4>
+                                    </Media>
+                                    <h3 align="center">{welcome}</h3>
+                                    <h3 align="center">{regName}</h3>
+                                </Media>
+                            </Media>
                         </Col>
                     </Row>
                     <br/>

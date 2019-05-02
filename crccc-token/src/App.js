@@ -18,14 +18,15 @@ export default class App extends Component{
 
     //TODO need to have things that keep info about the contracts => implement with drizzle
 
-    this.updateRegister = this.updateRegister().bind(this);
-    this.updateAvailableRegisters = this.updateAvailableRegisters().bind(this);
-    this.updateAccountName = this.updateAccountName().bind(this);
+    this.updateRegister = this.updateRegister.bind(this);
+    this.updateAvailableRegisters = this.updateAvailableRegisters.bind(this);
+    this.updateAccountName = this.updateAccountName.bind(this);
 
   };
 
   updateRegister(reg){
-    this.setState({register_name: reg});
+      console.log("New register selected: " + reg)
+      this.setState({register_name: reg});
   };
 
   updateAvailableRegisters(){
@@ -42,10 +43,10 @@ export default class App extends Component{
 
           <p>Lets get this bread</p>
 
-          <CurrentVendor register_name={this.state.register_name} available_registers={this.state.available_reg} updateRegister={this.updateRegister()}/>
+          <CurrentVendor register_name={this.state.register_name} available_registers={this.state.available_reg} updateRegister={this.updateRegister}/>
 
-          <RegisterStudent acc_name={this.state.acct_name} update_name={this.updateAccountName()}/>
-          <SpawnRegister updateAvailableRegisters={this.updateAvailableRegisters()}/>
+          <RegisterStudent acc_name={this.state.acct_name} update_name={this.updateAccountName}/>
+          <SpawnRegister updateAvailableRegisters={this.updateAvailableRegisters}/>
 
           <ItemsList register_name={this.state.register_name}/>
           <PurchaseItem register_name={this.state.register_name}/>

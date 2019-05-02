@@ -21,7 +21,8 @@ export default class App extends Component {
             available_reg: ["Lake Street Market",
                 "Cam's Lobby shop",
                 "Taco Bell",
-                "Debug"] //will need to query the contract to find avaiable
+                "Debug"], //will need to query the contract to find avaiable
+            inventory : [] //TODO this is needed to keep track of what items we are operating on
         };
 
         //TODO need to have things that keep info about the contracts => implement with drizzle

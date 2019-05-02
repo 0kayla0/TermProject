@@ -6,9 +6,18 @@ export default class StudentBalance extends Component{
     }
 
     render(){
+
+        let initBalance;
+        if(this.props.name === null){
+            initBalance = "Register with the Application to get 300 CRCCC";
+        }else{
+            initBalance = "There are currently X CRCCC in your account."
+        }
+
         return (
             <div>
-                <p>Lets get this bread</p>
+                <h5>{initBalance}</h5>
+                <h5>But seriously lets obtain this grain</h5>
             </div>
         );
     }

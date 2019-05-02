@@ -8,7 +8,7 @@ export default class PurchaseItem extends Component{
     render(){
         return (
             <div>
-                <p>Lets get this bread</p>
+                <p>Go for the dough</p>
             </div>
         );
     }

@@ -8,7 +8,7 @@ export default class CloseRegister extends Component{
     render(){
         return (
             <div>
-                <p>Lets get this bread</p>
+                <p>But really yeet this wheat</p>
             </div>
         );
     }

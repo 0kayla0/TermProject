@@ -18,7 +18,10 @@ export default class App extends Component {
         this.state = {
             acct_name: null,
             register_name: null,
-            available_reg: [] //will need to query the contract to find avaiable
+            available_reg: ["Lake Street Market",
+                "Cam's Lobby shop",
+                "Taco Bell",
+                "Debug"] //will need to query the contract to find avaiable
         };
 
         //TODO need to have things that keep info about the contracts => implement with drizzle
@@ -39,7 +42,11 @@ export default class App extends Component {
     * */
     updateAvailableRegisters(newReg) {
         //TODO
-        console.log(newReg);
+        let temp = this.state.available_reg;
+        temp.push(newReg);
+        console.log(temp);
+        this.setState({available_reg: temp});
+
     };
 
     updateAccountName(name) {
@@ -59,7 +66,7 @@ export default class App extends Component {
         if(this.state.acct_name === null){
             welcome = "Welcome New User! Before you use this application please register with the system first.";
         }else{
-            welcome = "Hello " + this.state.acct_name + ", time to spend some crypto."
+            welcome = "Hello " + this.state.acct_name + ", time to spend some mad crypto."
         }
 
         return (
@@ -96,7 +103,7 @@ export default class App extends Component {
                         </Col>
                         <Col>
                             <h4>Your Current Balance:</h4>
-                            <StudentBalance/>
+                            <StudentBalance name={this.state.acct_name}/>
                         </Col>
                     </Row>
                     <br/>

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0959312-2e46-4921-89d2-98a35a4ccb2e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Resources/CSU-Ram.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/CloseRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CloseRegister.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
+            <state relative-caret-position="333">
+              <caret line="154" column="30" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="30" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#1525#1612#0" />
@@ -37,8 +36,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/CloseRegister.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+            <state relative-caret-position="378">
+              <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -78,8 +89,8 @@
         <option value="$PROJECT_DIR$/src/Components/ItemsList.js" />
         <option value="$PROJECT_DIR$/src/Components/PurchaseItem.js" />
         <option value="$PROJECT_DIR$/src/Components/RegisterReport.js" />
-        <option value="$PROJECT_DIR$/src/Components/CloseRegister.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/Components/CloseRegister.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
@@ -253,7 +264,7 @@
       <updated>1556607193743</updated>
       <workItem from="1556607195202" duration="3158000" />
       <workItem from="1556757123138" duration="7726000" />
-      <workItem from="1556771920041" duration="18205000" />
+      <workItem from="1556771920041" duration="21315000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the components for the react app.  solidifying the structure">
       <created>1556758741204</created>
@@ -353,11 +364,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556789403173</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Looking nicer with the logo">
+      <created>1556790614073</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1556790614073</updated>
+    </task>
+    <task id="LOCAL-00016" summary="The register report displays a pop-up of the report. Im so tired, moving on to the Close register function">
+      <created>1556792749363</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1556792749363</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29089000" />
+    <option name="totallyTimeSpent" value="32199000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -388,7 +413,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286908" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32729805" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3286908" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50033265" side_tool="true" weight="0.32729805" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49966735" weight="0.32729805" />
@@ -403,7 +428,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23619428" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23619428" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -419,10 +444,10 @@
       <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="8" weight="0.3286908" />
+      <window_info active="true" anchor="bottom" id="TODO" order="8" visible="true" weight="0.32729805" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3286908" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033265" side_tool="true" weight="0.32729805" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49966735" visible="true" weight="0.32729805" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49966735" weight="0.32729805" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -451,7 +476,9 @@
     <MESSAGE value="The purchase items component has now been created" />
     <MESSAGE value="was trying to find a way to clear the shopping list when the user switches different registers.  Moving to styling." />
     <MESSAGE value="Updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates" />
+    <MESSAGE value="Looking nicer with the logo" />
+    <MESSAGE value="The register report displays a pop-up of the report. Im so tired, moving on to the Close register function" />
+    <option name="LAST_COMMIT_MESSAGE" value="The register report displays a pop-up of the report. Im so tired, moving on to the Close register function" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package-lock.json">
@@ -547,8 +574,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/RegisterReport.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        <state relative-caret-position="387">
+          <caret line="44" column="72" selection-start-line="44" selection-start-column="72" selection-end-line="44" selection-end-column="72" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -557,22 +584,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state>
+          <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/CloseRegister.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        <state relative-caret-position="378">
+          <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
+        <state relative-caret-position="333">
+          <caret line="154" column="30" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="30" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#1525#1612#0" />

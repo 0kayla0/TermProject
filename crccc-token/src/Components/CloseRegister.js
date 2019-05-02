@@ -5,10 +5,12 @@ export default class CloseRegister extends Component{
         super(props);
     }
 
+    //This will contain a modal that will display all of theinfo from the cashOut() of the register.
+
     render(){
         return (
             <div>
-                <p>But really yeet this wheat</p>
+                <p>Yeet this wheat</p>
             </div>
         );
     }

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
+import "./App.css";
+
 import CurrentVendor from "./Components/CurrentVendor";
 import CloseRegister from "./Components/CloseRegister";
 import SpawnRegister from "./Components/SpawnRegister";
@@ -86,8 +88,7 @@ export default class App extends Component {
         }
 
         return (
-            <div>
-
+            <div id={"application"}>
                 <Container>
                     <Row>
                         <Col>

@@ -89,6 +89,7 @@ export default class PurchaseItem extends Component{
             total_price += this.itemPrice(this.state.cart[i]);
         }
 
+        //TODO can add a subtotal and tax row as well
         let total_row= (
             <tr>
                 <td>ORDER TOTAL</td>
@@ -103,7 +104,7 @@ export default class PurchaseItem extends Component{
                     <Input onChange={(event) => (this.updateCurItem(event))} value={this.state.currentItem}/>
                     <Button onClick={() => (this.updateShoppingCart())}>Add to Cart</Button>
                 </InputGroup>
-                <Table>
+                <Table striped>
                     <thead>
                         <tr>
                             <th>Item Name</th>

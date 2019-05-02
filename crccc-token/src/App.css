@@ -1,0 +1,17 @@
+body    {
+    background-image: url("./Resources/CSU_The_Oval.jpg");
+}
+
+#application {
+    background-color: khaki;
+    width: fit-content;
+    /*height: fit-content;*/
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: #c25830;
+    border-width: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

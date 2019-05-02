@@ -36,6 +36,21 @@ export default class App extends Component {
     updateRegister(reg) {
         console.log("New register selected: " + reg)
         this.setState({register_name: reg});
+        let updatedInventory = [
+            {
+                name : "Orange",
+                price : 50
+            },
+            {
+                name : "Cupcake",
+                price : 150
+            },
+            {
+                name: "Meatball",
+                price : 999
+            }
+        ];
+        this.setState({inventory: [...updatedInventory]});
     };
 
     /* FIXME the orginal CRCCC contract will need to provide a function similar to the one
@@ -111,11 +126,11 @@ export default class App extends Component {
                     <Row>
                         <Col>
                             <h4>Items offered at venue:</h4>
-                            <ItemsList register_name={this.state.register_name}/>
+                            <ItemsList register_name={this.state.register_name} inventory={this.state.inventory}/>
                         </Col>
                         <Col>
                             <h4>Purchase Item</h4>
-                            <PurchaseItem register_name={this.state.register_name}/>
+                            <PurchaseItem register_name={this.state.register_name} inventory={this.state.inventory}/>
                         </Col>
                     </Row>
                     <br/>

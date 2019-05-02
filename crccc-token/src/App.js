@@ -1,9 +1,4 @@
 import React, {Component} from 'react';
-
-import {
-    Card, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
-} from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
 
 import CurrentVendor from "./Components/CurrentVendor";
@@ -68,7 +63,6 @@ export default class App extends Component {
             <div>
 
                 <Container>
-
                     <Row>
                         <Col>
                             <h1 align="center">Colorado State University's CRCCC Transaction Webpage</h1>
@@ -79,9 +73,7 @@ export default class App extends Component {
                             <h3 align="center">{regName}</h3>
                         </Col>
                     </Row>
-
                     <br/>
-
                     <Row>
                         <Col>
                             <h4>Register Here for First Time Users:</h4>
@@ -92,9 +84,7 @@ export default class App extends Component {
                             <SpawnRegister updateAvailableRegisters={this.updateAvailableRegisters}/>
                         </Col>
                     </Row>
-
                     <br/>
-
                     <Row>
                         <Col>
                             <h4>Select Store to Shop at:</h4>
@@ -106,9 +96,7 @@ export default class App extends Component {
                             <StudentBalance/>
                         </Col>
                     </Row>
-
                     <br/>
-
                     <Row>
                         <Col>
                             <h4>Items offered at venue:</h4>
@@ -119,9 +107,7 @@ export default class App extends Component {
                             <PurchaseItem register_name={this.state.register_name}/>
                         </Col>
                     </Row>
-
                     <br/>
-
                     <Row>
                         <Col>
                             <h3><strong>Store Managers Only</strong></h3>

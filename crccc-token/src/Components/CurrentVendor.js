@@ -22,7 +22,7 @@ export default class CurrentVendor extends Component{
     render(){
 
         //FIXME this is just a debugging value, this will need to be updated
-        let vendors = ["Lake Street", "Cam's Lobby shop", "Taco Bell", "Debug"];
+        let vendors = ["Lake Street Market", "Cam's Lobby shop", "Taco Bell", "Debug"];
 
         let vendor_Item = (vendors).map((item) =>
             <DropdownItem value={item}  onClick={(event) => this.props.updateRegister(event.target.value)}>{item}</DropdownItem>

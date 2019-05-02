@@ -18,16 +18,13 @@ export default class PurchaseItem extends Component{
         let temp_cart = [...this.state.cart];
         let temp_curItem = this.state.currentItem;
         temp_cart.push(temp_curItem);
-        temp_curItem = "Enter Item";
-
-        console.log("Adding " + temp_curItem + " to the cart");
-        console.log(temp_cart);
+        temp_curItem = "";
 
         this.setState({cart : temp_cart});
         this.setState({currentItem : temp_curItem});
-        console.log("yee")
     }
 
+    //FIXME
     resetShoppingCart(){
         this.setState({cart: []});
     }
@@ -104,7 +101,7 @@ export default class PurchaseItem extends Component{
                     <Input onChange={(event) => (this.updateCurItem(event))} value={this.state.currentItem}/>
                     <Button onClick={() => (this.updateShoppingCart())}>Add to Cart</Button>
                 </InputGroup>
-                <Table striped>
+                <Table striped dark>
                     <thead>
                         <tr>
                             <th>Item Name</th>

@@ -17,7 +17,7 @@ export default class ItemsList extends Component{
         ));
 
         return (
-            <Table striped>
+            <Table striped dark>
                 <thead>
                     <tr>
                         <th><strong>Item Name</strong></th>

@@ -34,8 +34,12 @@ export default class App extends Component {
         this.setState({register_name: reg});
     };
 
-    updateAvailableRegisters() {
+    /* FIXME the orginal CRCCC contract will need to provide a function similar to the one
+    * in trojan secrets
+    * */
+    updateAvailableRegisters(newReg) {
         //TODO
+        console.log(newReg);
     };
 
     updateAccountName(name) {
@@ -57,7 +61,6 @@ export default class App extends Component {
         }else{
             welcome = "Hello " + this.state.acct_name + ", time to spend some crypto."
         }
-
 
         return (
             <div>

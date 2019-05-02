@@ -1,6 +1,9 @@
 import React,{Component} from 'react';
 import {Button, Input, InputGroup, Table} from "reactstrap";
 
+//TODO it would be nice if I could remove an element if a user makes a mistake with typing
+//the items name
+
 export default class PurchaseItem extends Component{
     constructor(props){
         super(props);
@@ -38,13 +41,16 @@ export default class PurchaseItem extends Component{
         this.setState({currentItem : event.target.value});
     }
 
+    performTransaction(){
+        //TODO this will need to iterate through the cart and do individual transactions with the register
+    }
+
     //TODO check to make sure that the returned price from state is actually an int and not an unparsed string from json response
     render(){
 
         let total_price = 0;
         let transaction;
 
-        //FIXME <td>{item.price}</td>
         if(this.state.cart.length !== 0){
             transaction = this.state.cart.map((item) => (
                 <tr>
@@ -61,16 +67,16 @@ export default class PurchaseItem extends Component{
             );
         }
 
-        // for(let i = 0; i < this.state.cart.length; i++){
-        //     total_price += this.itemPrice(this.state.cart[i]);
-        // }
-        //
-        // let total_row= (
-        //     <tr>
-        //         <td>ORDER TOTAL</td>
-        //         <td>{total_price}</td>
-        //     </tr>
-        // );
+        for(let i = 0; i < this.state.cart.length; i++){
+            total_price += this.itemPrice(this.state.cart[i]);
+        }
+
+        let total_row= (
+            <tr>
+                <td>ORDER TOTAL</td>
+                <td>{total_price}</td>
+            </tr>
+        );
 
         return (
             <div>
@@ -88,8 +94,18 @@ export default class PurchaseItem extends Component{
                     </thead>
                     <tbody>
                         {transaction}
+                        <tr>
+                            <td>------------------------------------------------------</td>
+                            <td>------------</td>
+                        </tr>
+                        {total_row}
                     </tbody>
                 </Table>
+
+                <br/>
+
+                <Button onClick={()=> this.performTransaction}>Purchase Items</Button>
+
             </div>
         );
     }

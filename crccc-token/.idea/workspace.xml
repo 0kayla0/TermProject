@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0959312-2e46-4921-89d2-98a35a4ccb2e" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/CloseRegister.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/CurrentVendor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/ItemsList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/PurchaseItem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/RegisterStudent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/SpawnRegister.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Components/StudentBalance.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/App.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/logo.svg" afterPath="" />
+    <list default="true" id="b0959312-2e46-4921-89d2-98a35a4ccb2e" name="Default Changelist" comment="Setting up the components for the react app.  solidifying the structure">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/CurrentVendor.js" afterPath="$PROJECT_DIR$/src/Components/CurrentVendor.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,10 +21,13 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            <state relative-caret-position="199">
+              <caret line="18" column="91" lean-forward="false" selection-start-line="18" selection-start-column="91" selection-end-line="18" selection-end-column="91" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#996#1042#0" expanded="false" />
+                <element signature="e#1073#1089#0" expanded="false" />
+                <element signature="e#1117#1160#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -43,8 +36,8 @@
       <file leaf-file-name="CurrentVendor.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/CurrentVendor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+            <state relative-caret-position="51">
+              <caret line="3" column="98" lean-forward="false" selection-start-line="3" selection-start-column="98" selection-end-line="3" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -159,13 +152,13 @@
       <list>
         <option value="$PROJECT_DIR$/package-lock.json" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/Components/CurrentVendor.js" />
         <option value="$PROJECT_DIR$/src/Components/CloseRegister.js" />
         <option value="$PROJECT_DIR$/src/Components/SpawnRegister.js" />
         <option value="$PROJECT_DIR$/src/Components/PurchaseItem.js" />
         <option value="$PROJECT_DIR$/src/Components/RegisterStudent.js" />
         <option value="$PROJECT_DIR$/src/Components/ItemsList.js" />
         <option value="$PROJECT_DIR$/src/Components/StudentBalance.js" />
+        <option value="$PROJECT_DIR$/src/Components/CurrentVendor.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
@@ -357,12 +350,20 @@
       <option name="presentableId" value="Default" />
       <updated>1556607193743</updated>
       <workItem from="1556607195202" duration="3158000" />
-      <workItem from="1556757123138" duration="1564000" />
+      <workItem from="1556757123138" duration="3738000" />
     </task>
+    <task id="LOCAL-00001" summary="Setting up the components for the react app.  solidifying the structure">
+      <created>1556758741204</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556758741204</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4722000" />
+    <option name="totallyTimeSpent" value="6896000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="49" width="1926" height="1154" extended-state="6" />
@@ -402,6 +403,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Setting up the components for the react app.  solidifying the structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setting up the components for the react app.  solidifying the structure" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -413,6 +418,9 @@
           <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#996#1042#0" expanded="false" />
+            <element signature="e#1073#1089#0" expanded="false" />
+            <element signature="e#1117#1160#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -458,14 +466,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/CurrentVendor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -517,12 +517,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/CurrentVendor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="98" lean-forward="false" selection-start-line="3" selection-start-column="98" selection-end-line="3" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        <state relative-caret-position="199">
+          <caret line="18" column="91" lean-forward="false" selection-start-line="18" selection-start-column="91" selection-end-line="18" selection-end-column="91" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#996#1042#0" expanded="false" />
+            <element signature="e#1073#1089#0" expanded="false" />
+            <element signature="e#1117#1160#0" expanded="false" />
           </folding>
         </state>
       </provider>

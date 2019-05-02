@@ -8,8 +8,9 @@ export default class PurchaseItem extends Component{
     constructor(props){
         super(props);
         this.state = {
-          cart : [],
-          currentItem : "Enter Item"
+            cart : [],
+            currentItem : "Enter Item",
+            inventory : [...props.inventory]
         };
     }
 
@@ -25,6 +26,10 @@ export default class PurchaseItem extends Component{
         this.setState({cart : temp_cart});
         this.setState({currentItem : temp_curItem});
         console.log("yee")
+    }
+
+    resetShoppingCart(){
+        this.setState({cart: []});
     }
 
     itemPrice(itemName){
@@ -45,11 +50,24 @@ export default class PurchaseItem extends Component{
         //TODO this will need to iterate through the cart and do individual transactions with the register
     }
 
+    match(arr1, arr2){
+        if(arr1.length != arr2.length){ return false; }
+        for(let i = 0; i < arr1.length; i++){
+            if(arr1[i] !== arr2[i]) { return false; }
+        }
+        return true;
+    }
+
     //TODO check to make sure that the returned price from state is actually an int and not an unparsed string from json response
     render(){
 
         let total_price = 0;
         let transaction;
+
+        //FIXME
+        // if(!this.match(this.props.inventory, this.state.inventory) && this.props.inventory != null && this.state.cart.length !== 0){
+        //     this.resetShoppingCart();
+        // }
 
         if(this.state.cart.length !== 0){
             transaction = this.state.cart.map((item) => (

@@ -129,7 +129,7 @@ export default class App extends Component {
                             <ItemsList register_name={this.state.register_name} inventory={this.state.inventory}/>
                         </Col>
                         <Col>
-                            <h4>Purchase Item</h4>
+                            <h4>Current Shopping Cart</h4>
                             <PurchaseItem register_name={this.state.register_name} inventory={this.state.inventory}/>
                         </Col>
                     </Row>

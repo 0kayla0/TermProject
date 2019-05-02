@@ -31,7 +31,7 @@ export default class CurrentVendor extends Component{
         return (
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <DropdownToggle caret>
-                    Select Vendor
+                    Venues that Accept CRCCC
                 </DropdownToggle>
                 <DropdownMenu>
                     {vendor_Item}

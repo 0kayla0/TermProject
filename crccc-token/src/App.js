@@ -15,6 +15,7 @@ import StudentBalance from "./Components/StudentBalance";
 import RegisterReport from "./Components/RegisterReport";
 
 import getWeb3 from "./utils/getWeb3";
+import SelectTestAddress from "./Components/SelectTestAddress";
 //  https://reactstrap.github.io/
 //  https://reactstrap.github.io/components/
 
@@ -23,8 +24,9 @@ export default class App extends Component {
         super(props);
         this.state = {
             acct_name: null,
+            curr_address : null,
             register_name: null,
-            purchaserAddress: "",
+
             available_reg: ["Lake Street Market",
                 "Cam's Lobby shop",
                 "Taco Bell",
@@ -38,14 +40,6 @@ export default class App extends Component {
             loading: false,
             value: "",
             message: "",
-
-            allRamsTable: [],
-            purchasedRamsTable: [],
-
-
-            purchaserRamCount: 0,
-            purchaserRamCoinCount: 0,
-            walletAddress: "0x4327D8b79AB0499F81dD801db4365CdC914d6f3f"
         };
 
         //TODO need to have things that keep info about the contracts => implement with drizzle
@@ -53,6 +47,7 @@ export default class App extends Component {
         this.updateRegister = this.updateRegister.bind(this);
         this.updateAvailableRegisters = this.updateAvailableRegisters.bind(this);
         this.updateAccountName = this.updateAccountName.bind(this);
+        this.updateAddress = this.updateAddress.bind(this);
 
     };
 
@@ -66,13 +61,12 @@ export default class App extends Component {
                 CRCCC.abi,
                 deployedNetwork && deployedNetwork.address
             );
-            console.log(await instance.methods.symbol().call());
-            console.log(await instance.methods.name().call());
+
             this.setState({
                 web3: web3,
                 accounts: accounts,
                 CRCCC : instance,
-                purchaseAddress: accounts[0]
+                curr_address: accounts[0]
             });
         }catch(error){
             alert(error.valueOf());
@@ -114,6 +108,10 @@ export default class App extends Component {
     updateAccountName(name) {
         this.setState({acct_name: name});
     };
+
+    updateAddress(event){
+        this.setState({curr_address : event.target.value});
+    }
 
     render() {
 
@@ -157,6 +155,9 @@ export default class App extends Component {
                     </Row>
                     <br/>
                     <Row>
+                        <Col>
+                            <SelectTestAddress accounts={this.state.accounts} updateAddress={this.updateAddress}/>
+                        </Col>
                         <Col>
                             <h4>Register Here for First Time Users:</h4>
                             <RegisterStudent acc_name={this.state.acct_name} update_name={this.updateAccountName}/>

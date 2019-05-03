@@ -112,7 +112,7 @@ contract CRCCC is ERC20, ERC20Detailed{
     }
 
     function getUserName() view returns(string){
-        if(studentNames[msg.sender] == null) return "N/A";
+        if (bytes(studentNames[msg.sender]).length == 0) return "N/A";
         return studentNames[msg.sender];
     }
 

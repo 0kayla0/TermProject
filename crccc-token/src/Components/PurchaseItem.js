@@ -45,6 +45,19 @@ export default class PurchaseItem extends Component{
 
     performTransaction(){
         //TODO this will need to iterate through the cart and do individual transactions with the register
+        while(this.state.cart.length != 0){
+          let temp_cart = [...this.state.cart];
+          let temp_item = temp_cart.pop();
+          try{
+            const account = this.props.curr_address;
+            await CRCCC.methods.purchaseItem(this.state.register_name, temp_item).send({
+              from: account,
+              value: web3.utils.toWei("1", "ether") //FIXME How to handle CRCCC token?? Also make price of item.
+            });
+          } catch (err) {
+            this.setState({ errorMessage: err.message }); //HELP proper error handling?
+          }
+        }
     }
 
     match(arr1, arr2){
@@ -127,4 +140,3 @@ export default class PurchaseItem extends Component{
     }
 
 }
-

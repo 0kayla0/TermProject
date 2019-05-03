@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Container, Row, Col, Media } from 'reactstrap';
 
+import CRCCC from "./build/contracts/CRCCC";
 import "./App.css";
 import ramLogo from "./Resources/CSU-Ram.png";
 
@@ -13,6 +14,8 @@ import ItemsList from "./Components/ItemsList";
 import StudentBalance from "./Components/StudentBalance";
 import RegisterReport from "./Components/RegisterReport";
 
+import getWeb3 from "./utils/getWeb3";
+import SelectTestAddress from "./Components/SelectTestAddress";
 //  https://reactstrap.github.io/
 //  https://reactstrap.github.io/components/
 
@@ -21,12 +24,22 @@ export default class App extends Component {
         super(props);
         this.state = {
             acct_name: null,
+            curr_address : null,
             register_name: null,
+
             available_reg: ["Lake Street Market",
                 "Cam's Lobby shop",
                 "Taco Bell",
                 "Debug"], //will need to query the contract to find avaiable
-            inventory : [] //TODO this is needed to keep track of what items we are operating on
+            inventory : [], //TODO this is needed to keep track of what items we are operating on
+
+            web3: null,
+            accounts: null,
+            CRCCC: {},
+
+            loading: false,
+            value: "",
+            message: "",
         };
 
         //TODO need to have things that keep info about the contracts => implement with drizzle
@@ -34,8 +47,31 @@ export default class App extends Component {
         this.updateRegister = this.updateRegister.bind(this);
         this.updateAvailableRegisters = this.updateAvailableRegisters.bind(this);
         this.updateAccountName = this.updateAccountName.bind(this);
+        this.updateAddress = this.updateAddress.bind(this);
 
     };
+
+    async componentDidMount() {
+        try{
+            const web3 = await getWeb3();
+            const accounts = await web3.eth.getAccounts();
+            const networId = await web3.eth.net.getId();
+            const deployedNetwork = CRCCC.networks[networId];
+            const instance = new web3.eth.Contract(
+                CRCCC.abi,
+                deployedNetwork && deployedNetwork.address
+            );
+
+            this.setState({
+                web3: web3,
+                accounts: accounts,
+                CRCCC : instance,
+                curr_address: accounts[0]
+            });
+        }catch(error){
+            alert(error.valueOf());
+        }
+    }
 
     updateRegister(reg) {
         console.log("New register selected: " + reg)
@@ -72,6 +108,10 @@ export default class App extends Component {
     updateAccountName(name) {
         this.setState({acct_name: name});
     };
+
+    updateAddress(event){
+        this.setState({curr_address : event.target.value});
+    }
 
     render() {
 
@@ -115,6 +155,9 @@ export default class App extends Component {
                     </Row>
                     <br/>
                     <Row>
+                        <Col>
+                            <SelectTestAddress accounts={this.state.accounts} updateAddress={this.updateAddress}/>
+                        </Col>
                         <Col>
                             <h4>Register Here for First Time Users:</h4>
                             <RegisterStudent acc_name={this.state.acct_name} update_name={this.updateAccountName}/>

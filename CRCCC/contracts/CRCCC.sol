@@ -9,6 +9,7 @@ contract CRCCC is ERC20, ERC20Detailed{
 
     //This mapping holds all of the student accounts within the system
     mapping (string => address) studentAccounts;
+    mapping (address => string) studentNames;
 
     //Allows us to get the register instance via name
     mapping (string => address) RegisterAddress;
@@ -32,6 +33,7 @@ contract CRCCC is ERC20, ERC20Detailed{
         require(studentAccounts[name] == 0x0);
 
         studentAccounts[name] = msg.sender;
+        studentNames[msg.sender] = name;
         _mint(msg.sender,300);
 
     }
@@ -107,6 +109,11 @@ contract CRCCC is ERC20, ERC20Detailed{
 
     function viewRegisterReport(string vendorID) public view returns(string) {
         return RegisterReports[vendorID];
+    }
+
+    function getUserName() view returns(string){
+        if(studentNames[msg.sender] == null) return "N/A";
+        return studentNames[msg.sender];
     }
 
     //Debugging functions used in mocha tests

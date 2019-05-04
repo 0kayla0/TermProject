@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import {Button, Input, InputGroup, Table} from "reactstrap";
+import CRCCC from "../CRCCC.json";
+import web3 from "web3";
 
 //TODO it would be nice if I could remove an element if a user makes a mistake with typing
 //the items name
@@ -43,7 +45,7 @@ export default class PurchaseItem extends Component{
         this.setState({currentItem : event.target.value});
     }
 
-    performTransaction(){
+    async performTransaction(){
         //TODO this will need to iterate through the cart and do individual transactions with the register
         while(this.state.cart.length != 0){
           let temp_cart = [...this.state.cart];

@@ -11,7 +11,7 @@ export default class PurchaseItem extends Component{
         super(props);
         this.state = {
             cart : [],
-            currentItem : "Enter Item",
+            currentItem : "",
             inventory : [...props.inventory]
         };
     }
@@ -26,8 +26,8 @@ export default class PurchaseItem extends Component{
         this.setState({currentItem : temp_curItem});
     }
 
-    //FIXME
     resetShoppingCart(){
+        console.log("tried to call this");
         this.setState({cart: []});
     }
 
@@ -47,6 +47,7 @@ export default class PurchaseItem extends Component{
 
     async performTransaction(){
         //TODO this will need to iterate through the cart and do individual transactions with the register
+        console.log("hit");
         while(this.state.cart.length != 0){
           let temp_cart = [...this.state.cart];
           let temp_item = temp_cart.pop();
@@ -60,6 +61,7 @@ export default class PurchaseItem extends Component{
             this.setState({ errorMessage: err.message }); //HELP proper error handling?
           }
         }
+        this.resetShoppingCart();
     }
 
     match(arr1, arr2){
@@ -113,7 +115,7 @@ export default class PurchaseItem extends Component{
             <div>
                 <p>Go for the dough</p>
                 <InputGroup>
-                    <Input onChange={(event) => (this.updateCurItem(event))} value={this.state.currentItem}/>
+                    <Input onChange={(event) => (this.updateCurItem(event))} value={this.state.currentItem} placeholder={"Enter Item"}/>
                     <Button onClick={() => (this.updateShoppingCart())}>Add to Cart</Button>
                 </InputGroup>
                 <Table striped dark>
@@ -135,7 +137,7 @@ export default class PurchaseItem extends Component{
 
                 <br/>
 
-                <Button onClick={()=> this.performTransaction}>Purchase Items</Button>
+                <Button onClick={() => (this.performTransaction())}>Purchase Items</Button>
 
             </div>
         );

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Container, Row, Col, Media } from 'reactstrap';
 
-import CRCCC from "./build/contracts/CRCCC";
+import CRCCC from "./CRCCC.json";
 import "./App.css";
 import ramLogo from "./Resources/CSU-Ram.png";
 
@@ -207,4 +207,3 @@ export default class App extends Component {
     }
 
 }
-
